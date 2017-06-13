@@ -22,7 +22,7 @@ telegraf_default_inputs:
   - name: processes
   - name: swap
   - name: system
-  
+
 
 telegraf_inputs:
   # Read metrics about docker containers

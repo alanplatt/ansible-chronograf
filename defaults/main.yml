@@ -1,5 +1,5 @@
 ---
-chronograf_user:  chronograf 
+chronograf_user:  chronograf
 chronograf_group: "{{ chronograf_user }}"
 
 #############
