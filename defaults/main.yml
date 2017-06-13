@@ -4,9 +4,9 @@ chronograf_group: "{{ chronograf_user }}"
 
 #############
 ## Package
-chronograf_version: '*'                # e.g. 0.13.0 or '*' for latest
-chronograf_signing_key_url: "https://repos.influxdata.com/influxdb.key"
-chronograf_apt_repo: "deb https://repos.influxdata.com/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} stable"
+chronograf_version: 1.0.0
+chronograf_deb_url: "http://dl.influxdata.com/chronograf/releases/chronograf_{{ chronograf_version }}_amd64.deb"
+chronograf_deb_sha256sum: 7654417646fb3eb1d17f888377ecd51a7ff1d4070d55276dabc646a0ec57375c
 chronograf_yum_repo_baseurl: 'https://repos.influxdata.com/centos/\$releasever/\$basearch/stable'
 
 ##############

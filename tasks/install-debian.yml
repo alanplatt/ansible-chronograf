@@ -1,17 +1,18 @@
 ---
 
-- name: Download and install chronograf apt public signing key
-  apt_key:
-    url:   "{{ chronograf_signing_key_url }}"
-    state: present
+- name: Check deb file
+  stat:
+    path: "/tmp/chronograf_{{ chronograf_version }}_amd64.deb"
+  register: stat
 
-- name: Add chronograf apt repository definition to apt sources list
-  apt_repository: 
-    repo:         "{{ chronograf_apt_repo }}"
-    update_cache: yes
-    state:        present
+- name: Get deb file
+  get_url:
+    url: "{{ chronograf_deb_url }}"
+    dest: "/tmp/chronograf_{{ chronograf_version }}_amd64.deb"
+    sha256sum: "{{ chronograf_deb_sha256sum }}"
+  when: stat.stat.exists == False
 
 - name: Install chronograf
   apt:
-    name:  "chronograf={{ chronograf_version|default('*') }}"
     state: present
+    deb: "/tmp/chronograf_{{ chronograf_version }}_amd64.deb"

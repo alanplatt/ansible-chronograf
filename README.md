@@ -12,7 +12,7 @@ Ansible role to install and configure Chronograf. You may also be interested in
 - hosts: myhost
 
   vars:
-    chronograf_version: 0.13.0
+    chronograf_version: 1.0.0
 
   roles:
     - wunzeco.chronograf
