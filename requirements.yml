@@ -1,3 +1,2 @@
-- src: wunzeco.docker
 - src: wunzeco.influxdb
 - src: wunzeco.telegraf

@@ -14,7 +14,6 @@
     - roles/ansible-chronograf/test/plugins-vars.yml
 
   roles:
-    - wunzeco.docker
     - wunzeco.influxdb
     - wunzeco.telegraf
     - ansible-chronograf
